@@ -7,6 +7,9 @@ class Settings(BaseSettings):
     """
     애플리케이션 설정 클래스
 
+    BaseSettings 는 Pydantic Settings가 제공하는 설정 전용 베이스 클래스
+    .env 환경변수를 읽어서 타입이 맞는 python객체로 만들어 줌
+
     pydantic==-settings 를 사용해서 환경변수를 자동으로 로드
     각 필드는 환경변수 이름과 1:1로 매핑
     대소문자 무시.
