@@ -75,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
     # 여기에 작성하세요!
     needs: lint 
-    step: 
+    steps: 
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -87,7 +87,7 @@ jobs:
         run: uv sync --extra dev
       - name: Run tests
         env: 
-          UPSTAGE_API_KET: ${{ secrets.UPSTAGE_API_KEY }}
+          UPSTAGE_API_KEY: ${{ secrets.UPSTAGE_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: uv run pytest tests/ -v --tb=short
