@@ -6,9 +6,9 @@
 #   uv run uvicorn app.main:app --reload  # 서버 실행
 
 [project]
-name = "lumi-agent"
+name = "Insurance-RAG"
 version = "0.1.0"
-description = "루미(Lumi) - 버추얼 아이돌 AI 에이전트 서비스"
+description = "Insurance RAG - 보험 약관 RAG 챗봇"
 readme = "README.md"
 requires-python = ">=3.11"
 

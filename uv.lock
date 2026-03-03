@@ -1226,7 +1226,7 @@ wheels = [
 ]
 
 [[package]]
-name = "lumi-agent"
+name = "Insurance-RAG"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

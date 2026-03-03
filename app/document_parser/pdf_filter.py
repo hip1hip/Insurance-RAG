@@ -23,7 +23,7 @@ def extract_useful_pages(
     writer = PdfWriter()
 
     # 1. 제외할 페이지 번호들을 0-index 기반의 Set 으로 만듬
-    pages_to_exclude = set[int] = set()
+    pages_to_exclude: set[int] = set()
     for start, end in exclude_ranges:
         for i in range(start - 1, end):
             pages_to_exclude.add(i)
@@ -49,12 +49,14 @@ if __name__ == "__main__":
     # 프로젝트 루트 기준: app/document_parser/data/terms/ 원본, output/ 결과 저장
     base = Path(__file__).resolve().parent
     input_pdf = base / "data" / "terms" / "Hi2301_Direct_Medical_Indemnity_Plan.pdf"
-    output_pdf = base / "output" / "Hi2301_Direct_Medical_Indemnity_Plan_보상만.pdf"
+    output_pdf = base / "output" / "Hi2301_Direct_Medical_Indemnity_Plan_filtered.pdf"
 
     # 제외할 페이지 구간 (1-based, 끝 페이지 포함). 계약 내용 등 보상 외 구간을 넣으세요.
     ranges_to_exclude = [
         (9, 27),
         (45, 65),
+        (81, 87),
+        (94, 160),
         # 필요하면 구간 추가
     ]
 
